@@ -1,0 +1,9 @@
+"AddonInfo"
+{
+        "name"              "Internet's Extra ULX Commands"
+        "version"           "1.0"
+        "author_name"       "Dr Internet"
+        "author_email"      ""
+        "info"              "A series of extra useful ULX commands and utilities."
+        "override"          "0"
+}

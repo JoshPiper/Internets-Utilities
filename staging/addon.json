@@ -1,0 +1,13 @@
+{
+	"title"		:	"Internet's Utilities",
+	"author"	:	"Doctor Internet",
+	"type"		:	"tool",
+	"ignore"	:
+	[
+		"*.psd",
+		"*.vcproj",
+		"*.svn*",
+		"*addon*.txt"
+	]
+}
+
