@@ -1,0 +1,9 @@
+{
+	"title"		:	"Internet's Utilities",
+	"type"		:	"tool",
+	"tags"		:	[ ],
+	"ignore"	:
+	[
+		"*.svn*"
+	]
+}

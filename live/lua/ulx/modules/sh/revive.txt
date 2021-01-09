@@ -1,0 +1,34 @@
+function ulx.revive( calling_ply, target_ply )
+	local wepstab = target_ply.savedweapons or nil
+	local savedpos = target_ply.savedpos or nil
+	if not ( wepstab and savedpos ) then
+		calling_ply:ChatPrint( "This player does not have any saved data." )
+		return
+	end
+	if not target_ply:IsValid() then
+		return
+	end
+	target_ply:Spawn()
+	target_ply:SetPos( savedpos )
+	target_ply:SetLocalVelocity( Vector( 0, 0, 0, ) )
+	target_ply:StripWeapons()
+	for k, v in next, wepstab do
+		target_ply:Give( v )
+	end
+	
+	ulx.fancyLogAdmin( calling_ply, "#A revived #T", target_ply )
+end
+local rw = ulx.command( "Utility", "ulx revive", ulx.revive, { "!restore", "!revive" } )
+rw:addParam{ type=ULib.cmds.PlayerArg }
+rw:defaultAccess( ULib.ACCESS_SUPERADMIN )
+rw:help( "Restore a player's weapons" )
+
+if ( SERVER ) then
+	hook.Add( "PlayerDeath", "SaveWeapons", function( ply )
+		ply.savedweapons = {}
+		for k, v in next, ply:GetWeapons() do
+			table.insert( ply.savedweapons, v:GetClass() )
+		end
+		ply.savedpos = ply:GetPos()
+	end )
+end

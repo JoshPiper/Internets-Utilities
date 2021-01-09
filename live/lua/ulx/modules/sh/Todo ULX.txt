@@ -1,0 +1,37 @@
+Votes:
+
+VoteMute
+VoteGag
+VoteGimp
+VoteKick
+VoteBan
+
+
+Improvements:
+
+Gag
+    Perm
+    Temp
+    Regular (Until DC)
+    Ungag
+
+Mute
+    Perm
+    Temp
+    Regular
+    Unmute
+
+DarkRP Intergration
+    Unarrest
+    Arrest
+    SetMoney
+    SetRPName
+    ForceName
+    AbortHit
+    SetTeam
+    SetJobTitle
+    Wanted
+    Unwanted
+    Warrant
+    Unwarrant
+    Force Payday
